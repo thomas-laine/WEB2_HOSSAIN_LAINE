@@ -10,6 +10,7 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" />
   <component name="masterDetails">
     <states>
@@ -26,4 +27,6 @@
       </state>
     </states>
   </component>
+=======
+>>>>>>> 4638ea1777db8825820e2e1fbe0ec026b5e15625
 </project>
