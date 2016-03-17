@@ -20,6 +20,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('tel')->nullable()->after('name');
+        });
+
     }
 
     /**

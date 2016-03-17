@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+use Illuminate\Http\Request;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,46 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+    Route::group(['prefix' => 'articles'], function(){
+
+        /**
+        Route::get('/', function() {
+        return view('articles.index');
+        });
+
+
+        Route::get('/create', function() {
+        return view('articles.create');
+        });
+
+
+        Route::get('/create', 'ArticleController@create');
+
+        Route::post('/', [
+        'as' => 'articles.store',
+        'uses' => function(Request $request) {
+        }]);
+
+        Route::post('/articles', function(Request $request) {
+        dd($request->all());
+        });
+         */
+    });
+
+    Route::resource('/articles', 'PostController');
+
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+
 });
+
+
+
+
