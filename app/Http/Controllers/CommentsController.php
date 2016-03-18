@@ -34,6 +34,8 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //creer un commentaire
     public function store(Request $request)
     {
         $comment = new Comment();

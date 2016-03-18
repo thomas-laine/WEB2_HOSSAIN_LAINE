@@ -10,6 +10,7 @@ use App\Http\Requests;
 
 class PostController extends Controller
 {
+    //verification de la connexion
     public function __construct() {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
@@ -18,6 +19,8 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //affichage de tous les articles
     public function index()
     {
         $posts = Post::all();
@@ -31,6 +34,8 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //céation d'un article
     public function create()
     {
         $users = User::all()->lists('name', 'id');
@@ -44,6 +49,8 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //validation d'un article
     public function store(Requests\ValidatePostRequest $request)
     {
         /*
@@ -85,6 +92,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //affichage de l'article selectionner
     public function show($id)
     {
         $post = Post::find($id);
@@ -102,6 +111,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //modification d'un article
     public function edit($id)
     {
         $users = User::all()->lists('name', 'id');
@@ -121,6 +132,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //validation de la modification d'un article
     public function update(Requests\ValidatePostRequest $request, $id)
     {
         $post = Post::find($id);
@@ -144,6 +157,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //supprimer un article
     public function destroy($id)
     {
         $post = Post::find($id);

@@ -12,6 +12,8 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+    //verification de la connexion
     public function __construct()
     {
         $this->middleware('auth');

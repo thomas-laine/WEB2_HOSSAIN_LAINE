@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 class ContactController extends Controller
 {
+    //verification de la connexion
     public function __construct(){
         $this->middleware('auth');
     }
