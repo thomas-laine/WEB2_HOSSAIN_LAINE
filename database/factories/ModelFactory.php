@@ -28,3 +28,20 @@ $factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
         'description' => $faker->text,
     ];
 });
+
+$factory->define(App\Models\Projet::class, function (Faker\Generator $faker) {
+    return [
+        'id' => $faker->numberBetween(1, 20),
+        'title' => $faker->title,
+        'name' => $faker->name,
+        'adresse' => $faker->text,
+        'email' => $faker->email,
+        'tel' => $faker->phoneNumber,
+        'ficheID' => $faker->text,
+        'typeProjet' => $faker->text,
+        'contexte' => $faker->text,
+        'demande' => $faker->text,
+        'objectifs' => $faker->text,
+        'contraintes' => $faker->text,
+    ];
+});

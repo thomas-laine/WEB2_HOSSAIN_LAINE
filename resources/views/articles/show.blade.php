@@ -10,4 +10,8 @@
         <p>{{ $article->description }}</p>
     </div>
 
+    <form action="{{route('articles.destroy', $post->id)}}" method="POST">
+        <button class="btn btn-danger">Supprimer</button>
+    </form>
+
 @endsection

@@ -55,7 +55,35 @@ Route::group(['middleware' => ['web']], function () {
          */
     });
 
+    Route::group(['prefix' => 'projets'], function(){
+
+        /**
+        Route::get('/', function() {
+        return view('projets.index');
+        });
+
+
+        Route::get('/create', function() {
+        return view('projets.create');
+        });
+
+
+        Route::get('/create', 'ArticleController@create');
+
+        Route::post('/', [
+        'as' => 'projets.store',
+        'uses' => function(Request $request) {
+        }]);
+
+        Route::post('/projets', function(Request $request) {
+        dd($request->all());
+        });
+         */
+    });
+
     Route::resource('/articles', 'PostController');
+
+    Route::resource('/projets', 'ProjetController');
 
     Route::resource('/profile', 'ProfileController');
 
