@@ -40,8 +40,8 @@ class CommentsController extends Controller
         $comment->user_id      = $request->user()->id;
         $comment->article_id        = $request->article_id;
         $comment->commentaire  = $request->commentaire;
-
         $comment->save();
+
         return redirect()->route('articles.show', $comment->article_id);
     }
 
