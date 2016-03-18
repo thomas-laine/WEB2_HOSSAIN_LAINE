@@ -69,9 +69,10 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
 
+    Route::post('comments', 'CommentsController@store');
     Route::get('/profile', ['middleware' => 'auth', 'as' => 'profile.show', 'uses' => 'ProfileController@show']);
     Route::get('/profile/edit', ['middleware' => 'auth', 'as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-    Route::put('/profile', ['middleware' => 'auth', 'as' => 'profile.update', 'uses' => 'ProfileController@edit']);
+    Route::put('/profile', ['middleware' => 'auth', 'as' => 'profile.update', 'uses' => 'ProfileController@update']);
 
 });
 
